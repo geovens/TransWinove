@@ -1,0 +1,5 @@
+
+IDI_GREEN		ICON			icon_green.ico
+IDI_RED			ICON			icon_red.ico
+IDI_GREENBLANK	ICON			icon_greenblank.ico
+IDC_CURSOR		CURSOR			cursor.cur

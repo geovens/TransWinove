@@ -1,0 +1,6 @@
+build/
+*.pdb
+*.exp
+*.sdf
+*.v12.suo
+*.opensdf
