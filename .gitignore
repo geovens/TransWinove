@@ -1,4 +1,5 @@
 build/
+versions/
 *.pdb
 *.exp
 *.sdf

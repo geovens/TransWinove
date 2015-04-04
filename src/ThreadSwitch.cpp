@@ -6,13 +6,11 @@ ThreadSwitch::ThreadSwitch(TransApp *owner, HWND hwnd) : wxThread()
 {
 	Owner = owner;
 	HWndSet = hwnd;
-	IsOn = true;
 	MessageExit = false;
 }
 
 void* ThreadSwitch::Entry()
 {
-	HWND hwnd;
 	while (!MessageExit)
 	{
 		POINT mousepoint;
@@ -27,30 +25,31 @@ void* ThreadSwitch::Entry()
 		{
 			if (Owner->ThreadWaitInactiveIsRuning)
 				continue;
-			if (nowon && !IsOn)
+			if (nowon)
 			{
 				Owner->SetNoHitTrans(HWndSet, 0x60);
-				IsOn = true;
+				//IsOn = true;
 			}
-			else if (!nowon && IsOn)
+			else if (!nowon)
 			{
 				Owner->SetNoHitTrans(HWndSet, 0xD0);
-				IsOn = false;
+				//IsOn = false;
 			}
 		}
 		else
 		{
-			if (nowon && !IsOn)
+			if (nowon)
 			{
 				Owner->SetHitTrans(HWndSet, 0xD0);
-				IsOn = true;
+				//IsOn = true;
 			}
-			else if (!nowon && IsOn)
+			else if (!nowon)
 			{
 				Owner->SetHitTrans(HWndSet, 0xD0);
-				IsOn = false;
+				//IsOn = false;
 			}
 		}
+
 		Sleep(20);
 	}
 	return NULL;
