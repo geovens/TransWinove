@@ -51,6 +51,7 @@ void TransApp::RightClick()
 {
 	if (TransWin != 0)
 	{
+		Sleep(100);
 		Cancel(false);
 	}
 	else
@@ -63,7 +64,7 @@ void TransApp::RightClick()
 void TransApp::Quit()
 {
 	//ExitMessage = true;
-	Sleep(100);
+	Sleep(200);
 	aTaskBarIcon->RemoveIcon();
 	//taskbar->Destroy();
 	wxExit();

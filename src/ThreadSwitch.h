@@ -13,11 +13,16 @@ class ThreadSwitch : public wxThread
 	virtual void* Entry();
 	bool MessageExit;
 	HWND HWndSet;
-	HWND LastFore;
 
 	private:
 	TransApp *Owner;
-	//bool IsOn;
+	bool LastOn;
+	HWND LastPoint00;
+	HWND LastPoint01;
+	HWND LastPoint10;
+	HWND LastPoint11;
+	HWND LastTop;
+	bool LastButton;
 };
 
 #endif
